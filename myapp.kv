@@ -1,0 +1,49 @@
+Screen:
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: dp(20)
+        spacing: dp(20)
+        md_bg_color: 0, 0, 0, 1
+
+        Widget:
+            size_hint_y: None
+            height: dp(50)
+
+        MDLabel:
+            text: "NLP Text Emotion Detection"
+            halign: "center"
+            theme_text_color: "Custom"
+            text_color: 1, 1, 1, 1
+            font_style: 'H4'
+
+        MDLabel:
+            text: "Welcome to our cutting-edge NLP Text Emotion Detection service! In the digital age, understanding human emotions has become more critical than ever. On this app you can write your text of sentences and it will detect the emotions of the text."
+            halign: "center"
+            theme_text_color: "Custom"
+            text_color: 1, 1, 1, 1
+
+        MDTextField:
+            id: sentence_input
+            hint_text: "Enter a sentence"
+            mode: "rectangle"
+            size_hint_x: None
+            width: "300dp"
+            pos_hint: {"center_x": 0.5}
+            text_color: 1, 1, 1, 1  
+            line_color_focus: 1, 0.5, 0, 1 
+            line_color_normal: 1, 1, 1, 1  
+
+        MDRoundFlatButton:
+            text: "Submit"
+            size_hint_x: None
+            width: "100dp"
+            pos_hint: {"center_x": 0.5}
+            md_bg_color: 1, 0.5, 0, 1  
+            on_release: app.prediction()
+
+        MDRaisedButton:
+            text: "Refresh"
+            size_hint_x: None
+            width: "100dp"
+            pos_hint: {"center_x": 0.5}
+            on_release: app.refresh_input()
